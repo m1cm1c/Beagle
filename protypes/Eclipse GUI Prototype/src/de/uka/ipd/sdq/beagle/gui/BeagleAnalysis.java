@@ -13,7 +13,7 @@ import javax.swing.JRadioButton;
 import net.miginfocom.swing.MigLayout;
 
 public class BeagleAnalysis {
-
+	BeagleAnalysisController beagleAnalysisController;
 	private JFrame frmBeagleAnalysis;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	JButton btnStartStopAnalysis = new JButton("Start Analysis");
@@ -27,7 +27,7 @@ public class BeagleAnalysis {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					new BeagleAnalysis();
+					new BeagleAnalysis(new BeagleConfiguration());
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -38,7 +38,8 @@ public class BeagleAnalysis {
 	/**
 	 * Create the application.
 	 */
-	public BeagleAnalysis() {
+	public BeagleAnalysis(BeagleConfiguration beagleConfiguration) {
+		this.beagleAnalysisController = new BeagleAnalysisController(this, beagleConfiguration);
 		initialize();
 		this.frmBeagleAnalysis.setVisible(true);
 
