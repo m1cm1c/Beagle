@@ -13,10 +13,10 @@ import javax.swing.JRadioButton;
 import net.miginfocom.swing.MigLayout;
 
 public class BeagleAnalysis {
-	BeagleAnalysisController beagleAnalysisController;
+	BeagleAnalysisController controller;
 	private JFrame frmBeagleAnalysis;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
-	JButton btnStartStopAnalysis = new JButton("Start Analysis");
+	JButton btnStartAbortAnalysis = new JButton("Start Analysis");
 	JButton btnPauseAnalysis = new JButton("Pause Analysis");
 
 	/**
@@ -39,7 +39,7 @@ public class BeagleAnalysis {
 	 * Create the application.
 	 */
 	public BeagleAnalysis(BeagleConfiguration beagleConfiguration) {
-		this.beagleAnalysisController = new BeagleAnalysisController(this, beagleConfiguration);
+		this.controller = new BeagleAnalysisController(this, beagleConfiguration);
 		initialize();
 		this.frmBeagleAnalysis.setVisible(true);
 
@@ -60,15 +60,16 @@ public class BeagleAnalysis {
 				.setLayout(new MigLayout("", "[133px][48px][555px]", "[39px][35px][][][][][][][][]"));
 		frmBeagleAnalysis.getContentPane().add(lblMakeSureThat, "cell 0 0 3 1,grow");
 
-		btnStartStopAnalysis.addActionListener(new ActionListener() {
+		btnStartAbortAnalysis.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (btnStartStopAnalysis.getText().equals("Start Analysis")) {
-					btnStartStopAnalysis.setText("Stop Analysis");
+				if (btnStartAbortAnalysis.getText().equals("Start Analysis")) {
+					btnStartAbortAnalysis.setText("Abort Analysis");
 					btnPauseAnalysis.setEnabled(true);
+					controller.startAnalysis();
 				} else {
-					btnStartStopAnalysis.setText("Start Analysis");
+					btnStartAbortAnalysis.setText("Start Analysis");
 					btnPauseAnalysis.setEnabled(false);
-
+					controller.abortAnalysis();
 				}
 			}
 		});
@@ -83,7 +84,13 @@ public class BeagleAnalysis {
 		JRadioButton rdbtnOnADifferent = new JRadioButton("On a Different Machine Over a Network");
 		buttonGroup.add(rdbtnOnADifferent);
 		frmBeagleAnalysis.getContentPane().add(rdbtnOnADifferent, "flowx,cell 2 4");
-		frmBeagleAnalysis.getContentPane().add(btnStartStopAnalysis, "cell 0 9,alignx left,aligny bottom");
+		frmBeagleAnalysis.getContentPane().add(btnStartAbortAnalysis, "cell 0 9,alignx left,aligny bottom");
+		btnPauseAnalysis.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controller.pauseAnalysis(); // TODO needs state protection and
+											// continueAnalysis()
+			}
+		});
 
 		btnPauseAnalysis.setEnabled(false);
 		frmBeagleAnalysis.getContentPane().add(btnPauseAnalysis, "cell 2 9,alignx left,aligny top");
