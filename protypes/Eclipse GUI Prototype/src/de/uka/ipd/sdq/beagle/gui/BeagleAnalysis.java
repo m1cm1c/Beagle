@@ -52,7 +52,7 @@ public class BeagleAnalysis {
 		frmBeagleAnalysis = new JFrame();
 		frmBeagleAnalysis.setTitle("Beagle Analysis");
 		frmBeagleAnalysis.setBounds(100, 100, 786, 544);
-		frmBeagleAnalysis.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmBeagleAnalysis.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
 		JLabel lblMakeSureThat = new JLabel(
 				"<html>In order to provide accurate measurement results, Beagle requires that the system it's running isn't busy running other software. Please make sure Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus eros non odio sollicitudin varius. Nunc magna purus,</html>");
