@@ -1,5 +1,6 @@
 package de.uka.ipd.sdq.beagle.handler;
 
+import de.uka.ipd.sdq.beagle.gui.BeagleAnalysis;
 import de.uka.ipd.sdq.pcm.gmf.seff.edit.parts.InternalAction2EditPart;
 import de.uka.ipd.sdq.pcm.gmf.seff.edit.parts.InternalActionEditPart;
 
@@ -43,6 +44,7 @@ public class DemoBeagleContextMenuEntryHandlerInternalAction extends AbstractHan
 		MessageDialog.openInformation(window.getShell(), "Beagle is alive!",
 				"Belive it, or not. But Beagle ist alive!\n" + "You want to analyse: A single component: "
 						+ displayString);
+		new BeagleAnalysis();
 		return null;
 	}
 }

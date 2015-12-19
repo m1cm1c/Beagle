@@ -1,5 +1,7 @@
 package de.uka.ipd.sdq.beagle.handler;
 
+import de.uka.ipd.sdq.beagle.gui.BeagleAnalysis;
+
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -48,6 +50,7 @@ public class DemoBeagleContextMenuEntryHandlerRepository extends AbstractHandler
 					"The handler was not executet with a file.\n" + "This should not be possible!\n"
 							+ "selection.getFirstElement() returned " + firstElement.toString());
 		}
+		new BeagleAnalysis();
 		return null;
 	}
 

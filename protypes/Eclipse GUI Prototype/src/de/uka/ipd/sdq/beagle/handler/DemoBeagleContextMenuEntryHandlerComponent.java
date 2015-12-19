@@ -1,5 +1,6 @@
 package de.uka.ipd.sdq.beagle.handler;
 
+import de.uka.ipd.sdq.beagle.gui.BeagleAnalysis;
 import de.uka.ipd.sdq.pcm.gmf.repository.edit.parts.BasicComponentEditPart;
 
 import org.eclipse.core.commands.AbstractHandler;
@@ -30,6 +31,7 @@ public class DemoBeagleContextMenuEntryHandlerComponent extends AbstractHandler 
 				"Belive it, or not. But Beagle ist alive!\n" + "You want to analyse: A single component: "
 						+ basicComponentEditPart.getPrimaryShape().getFigureBasicComponent_Name_LabelFigure()
 								.getText());
+		new BeagleAnalysis();
 		return null;
 	}
 }
