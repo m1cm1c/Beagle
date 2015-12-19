@@ -1,6 +1,7 @@
 package de.uka.ipd.sdq.beagle.handler;
 
 import de.uka.ipd.sdq.beagle.gui.BeagleAnalysis;
+import de.uka.ipd.sdq.beagle.gui.BeagleConfiguration;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -39,6 +40,11 @@ public class DemoBeagleContextMenuEntryHandlerRepository extends AbstractHandler
 				MessageDialog.openInformation(window.getShell(), "Beagle is alive!",
 						"Belive it, or not. But Beagle ist alive!\n" + "You want to analyse: The whole repository: "
 								+ clickedFilePath.toString());
+
+				String repositoryName = clickedFilePath.toString();
+				BeagleConfiguration beagleConfiguration = new BeagleConfiguration();
+				beagleConfiguration.setAnalyseRepository(repositoryName);
+				new BeagleAnalysis(beagleConfiguration);
 			} else {
 				MessageDialog.openInformation(shell, "Error",
 						"The handler was not executet with a file with a proper file extension.\n"
@@ -50,7 +56,6 @@ public class DemoBeagleContextMenuEntryHandlerRepository extends AbstractHandler
 					"The handler was not executet with a file.\n" + "This should not be possible!\n"
 							+ "selection.getFirstElement() returned " + firstElement.toString());
 		}
-		new BeagleAnalysis();
 		return null;
 	}
 
