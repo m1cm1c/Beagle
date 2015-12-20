@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="eclipse_native_gui_prototype.intro.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="eclipse_native_gui_prototype.intro.Perspective"
+            id="Eclipse_Native_GUI_Prototype.perspective">
+      </perspective>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="Eclipse_Native_GUI_Prototype.application"
+            name="Beagle Analysis">
+         <property
+               name="windowImages"
+               value="icons/alt_window_16.gif,icons/alt_window_32.gif">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro">
+      <intro
+            class="org.eclipse.ui.intro.config.CustomizableIntroPart"
+            id="eclipse_native_gui_prototype.intro">
+      </intro>
+      <introProductBinding
+            introId="eclipse_native_gui_prototype.intro"
+            productId="Eclipse_Native_GUI_Prototype.product">
+      </introProductBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro.config">
+      <config
+            introId="eclipse_native_gui_prototype.intro"
+            content="introContent.xml"
+            id="Eclipse_Native_GUI_Prototype.configId">
+         <presentation
+               home-page-id="root">
+            <implementation
+                  kind="html"
+                  os="win32,linux,macosx">
+            </implementation>
+         </presentation>
+      </config>
+   </extension>
+
+</plugin>
