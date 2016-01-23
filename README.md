@@ -1,2 +1,3 @@
-# Beagle public
-The contents of this branch are available on GitHub pages (http://[username].github.io/Beagle).
+# Beagle Web Presence
+
+Beagle’s web presence, published on [GitHub Pages](https://m1cm1c.github.io/Beagle).
