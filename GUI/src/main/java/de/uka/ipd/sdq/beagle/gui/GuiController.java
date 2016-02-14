@@ -208,7 +208,14 @@ public class GuiController {
 
 				// when {@code beagleController.startAnalysis()} returns, close the dialog
 				GuiController.this.state = GuiControllerState.terminated;
-				GuiController.this.messageDialog.close();
+
+				GuiController.this.shell.getDisplay().asyncExec(new Runnable() {
+
+					@Override
+					public void run() {
+						GuiController.this.messageDialog.close();
+					}
+				});
 			}
 		}.start();
 	}
