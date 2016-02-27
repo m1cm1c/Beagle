@@ -17,6 +17,12 @@
     catch(err) {
     }
 //-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
 </script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
@@ -69,13 +75,13 @@
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#methods.inherited.from.class.java.lang.Object">Method</a></li>
+<li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a name="skip.navbar.top">
@@ -89,7 +95,7 @@
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li>java.lang.Object</li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
 <li>de.uka.ipd.sdq.beagle.core.SeffLoop</li>
@@ -101,12 +107,12 @@
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><a href="../../../../../../de/uka/ipd/sdq/beagle/core/MeasurableSeffElement.html" title="interface in de.uka.ipd.sdq.beagle.core">MeasurableSeffElement</a>, java.io.Serializable</dd>
+<dd><a href="../../../../../../de/uka/ipd/sdq/beagle/core/MeasurableSeffElement.html" title="interface in de.uka.ipd.sdq.beagle.core">MeasurableSeffElement</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></dd>
 </dl>
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">SeffLoop</span>
-extends java.lang.Object
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../../../de/uka/ipd/sdq/beagle/core/MeasurableSeffElement.html" title="interface in de.uka.ipd.sdq.beagle.core">MeasurableSeffElement</a></pre>
 <div class="block">Models loops (like Java’s for , while and do - while statement) which affect the calls
  a component makes to other components. Such loops are—contrary to loops that stay
@@ -133,7 +139,9 @@ implements <a href="../../../../../../de/uka/ipd/sdq/beagle/core/MeasurableSeffE
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../../de/uka/ipd/sdq/beagle/core/SeffLoop.html#SeffLoop--">SeffLoop</a></span>()</code>&nbsp;</td>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../../de/uka/ipd/sdq/beagle/core/SeffLoop.html#SeffLoop-de.uka.ipd.sdq.beagle.core.CodeSection-">SeffLoop</a></span>(<a href="../../../../../../de/uka/ipd/sdq/beagle/core/CodeSection.html" title="class in de.uka.ipd.sdq.beagle.core">CodeSection</a>&nbsp;loopBody)</code>
+<div class="block">Creates a SeffBranch using a given code section for the loop's body.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -144,12 +152,37 @@ implements <a href="../../../../../../de/uka/ipd/sdq/beagle/core/MeasurableSeffE
 <!--   -->
 </a>
 <h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../de/uka/ipd/sdq/beagle/core/SeffLoop.html#equals-java.lang.Object-">equals</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;object)</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../de/uka/ipd/sdq/beagle/core/CodeSection.html" title="class in de.uka.ipd.sdq.beagle.core">CodeSection</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../de/uka/ipd/sdq/beagle/core/SeffLoop.html#getLoopBody--">getLoopBody</a></span>()</code>
+<div class="block">Gives a valid code sections representing the body of this SeffBranch's loop.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../de/uka/ipd/sdq/beagle/core/SeffLoop.html#hashCode--">hashCode</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../de/uka/ipd/sdq/beagle/core/SeffLoop.html#toString--">toString</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.Object</h3>
-<code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -165,13 +198,81 @@ implements <a href="../../../../../../de/uka/ipd/sdq/beagle/core/MeasurableSeffE
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="SeffLoop--">
+<a name="SeffLoop-de.uka.ipd.sdq.beagle.core.CodeSection-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>SeffLoop</h4>
-<pre>public&nbsp;SeffLoop()</pre>
+<pre>public&nbsp;SeffLoop(<a href="../../../../../../de/uka/ipd/sdq/beagle/core/CodeSection.html" title="class in de.uka.ipd.sdq.beagle.core">CodeSection</a>&nbsp;loopBody)</pre>
+<div class="block">Creates a SeffBranch using a given code section for the loop's body.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>loopBody</code> - A valid code sections representing the body of this SeffBranch's
+            loop. Must not be <code>null</code>.</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="equals-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>equals</h4>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;object)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getLoopBody--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLoopBody</h4>
+<pre>public&nbsp;<a href="../../../../../../de/uka/ipd/sdq/beagle/core/CodeSection.html" title="class in de.uka.ipd.sdq.beagle.core">CodeSection</a>&nbsp;getLoopBody()</pre>
+<div class="block">Gives a valid code sections representing the body of this SeffBranch's loop.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the loopBody A valid code sections representing the body of this
+         SeffBranch's loop. Is never <code>null</code>.</dd>
+</dl>
+</li>
+</ul>
+<a name="hashCode--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hashCode</h4>
+<pre>public&nbsp;int&nbsp;hashCode()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="toString--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>toString</h4>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -229,13 +330,13 @@ implements <a href="../../../../../../de/uka/ipd/sdq/beagle/core/MeasurableSeffE
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#methods.inherited.from.class.java.lang.Object">Method</a></li>
+<li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a name="skip.navbar.bottom">
